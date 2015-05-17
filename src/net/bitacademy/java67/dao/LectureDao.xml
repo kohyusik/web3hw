@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 변경 사항: resultMap 적용 -->
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.bitacademy.java67.dao.LectureDao">
+  
+  <resultMap type="LectureVo" id="LectureVoMap">
+    <id     column="lno"      property="lno" />
+    <result column="title"    property="title" />
+    <result column="intro"    property="intro" />
+    <result column="capa"     property="capa" />
+    <result column="st_date"  property="st_date" />
+    <result column="ed_date"  property="ed_date" />
+    <result column="hours"    property="hours" />
+    <result column="days"     property="days" />
+    <result column="cnt"      property="cnt" />
+    <result column="mno"      property="mno" />
+    <result column="cno"      property="cno" />
+  </resultMap>
+  
+  
+  <insert id="insert" parameterType="LectureVo">
+      insert into lectures
+             (title, st_date, ed_date, hours, days, capa, intro, cnt, mno, cno) 
+      VALUES (#{title}, #{st_date}, #{ed_date}, #{hours}, #{days}, 
+              #{capa}, #{content}, 0, #{mno}, #{cno})
+  </insert>
+  
+  <select id="selectList" resultMap="LectureVoMap">
+      SELECT lno, title, capa, st_date, ed_date, days
+      FROM lectures
+  </select>
+  
+  <select id="selectOne" parameterType="int" resultMap="LectureVoMap">
+      SELECT 
+        lno, title, intro, capa, st_date, ed_date, hours, days, cnt, mno, cno
+      FROM lectures
+      WHERE lno=#{no}
+  </select>
+  
+  <delete id="delete" parameterType="int">
+      DELETE FROM lecture WHERE lno=#{value}
+  </delete>
+  
+  <update id="update" parameterType="LectureVo">
+      UPDATE lecture SET 
+        title=#{title} 
+        ,st_date=#{st_date}
+        ,ed_date=#{ed_date}
+        ,hours=#{hours}
+        ,days=#{days}
+        ,capa=#{capa}
+        ,content=#{content}
+      WHERE lno=#{no}
+  </update>
+  
+</mapper>
+
+
+
+
+
+
+
+
+

@@ -12,7 +12,7 @@
 <body>
 <h2>강의 상세정보</h2>
 <input type='button' value='목록으로' onclick='location.href="list";'>
-<form action="change" method="post">
+<form action="change?no=${lecture.lno}" method="post">
 번호: <input type='text' name='lno' readonly value='${lecture.lno}'><br>
 강의명: <input type='text' name='title' value='${lecture.title}' required><br>           
 시작일: <input type='date' name='st_date' value='${lecture.st_date}' required><br>         

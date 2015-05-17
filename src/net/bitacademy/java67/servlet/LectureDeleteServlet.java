@@ -17,19 +17,17 @@ import net.bitacademy.java67.dao.LectureDao;
 @WebServlet("/lecture/delete")
 public class LectureDeleteServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
-/*
+
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
+    LectureDao lectureDao = 
+        (LectureDao) this.getServletContext().getAttribute("lectureDao");
     
-    int no = Integer.parseInt(request.getParameter("no"));
-    
-    LectureDao lectureDao = new LectureDao();
-    lectureDao.setDBConnectionPool(new DBConnectionPool());
-    lectureDao.delete(no);
+    lectureDao.delete(Integer.parseInt(request.getParameter("no")));
     
     response.sendRedirect("list");
-  }*/
+  }
 }
 
 

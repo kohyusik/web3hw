@@ -23,10 +23,11 @@
   
   
   <insert id="insert" parameterType="LectureVo">
-      insert into lectures
-             (title, st_date, ed_date, hours, days, capa, intro, cnt, mno, cno) 
-      VALUES (#{title}, #{st_date}, #{ed_date}, #{hours}, #{days}, 
-              #{capa}, #{content}, 0, #{mno}, #{cno})
+      INSERT INTO lectures
+             (title, st_date, ed_date, hours, days,
+              capa, intro, cnt, mno, cno) 
+      VALUES (#{title}, #{st_date}, #{ed_date}, #{hours}, #{days},
+              #{capa}, #{intro}, 0, #{mno}, #{cno})
   </insert>
   
   <select id="selectList" resultMap="LectureVoMap">
@@ -42,19 +43,21 @@
   </select>
   
   <delete id="delete" parameterType="int">
-      DELETE FROM lecture WHERE lno=#{value}
+      DELETE FROM lectures WHERE lno=#{value}
   </delete>
   
   <update id="update" parameterType="LectureVo">
-      UPDATE lecture SET 
+      UPDATE lectures SET 
         title=#{title} 
         ,st_date=#{st_date}
         ,ed_date=#{ed_date}
         ,hours=#{hours}
         ,days=#{days}
         ,capa=#{capa}
-        ,content=#{content}
-      WHERE lno=#{no}
+        ,intro=#{intro}
+        ,mno=#{mno}
+        ,cno=#{cno}
+      WHERE lno=#{lno}
   </update>
   
 </mapper>

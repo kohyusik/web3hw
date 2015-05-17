@@ -22,7 +22,6 @@ public class ContextLoaderListener implements ServletContextListener {
   public void contextInitialized(ServletContextEvent event) {
     // 웹 애플리케이션을 실행하는 동안 사용할 기본 객체 준비.
     ServletContext ctx = event.getServletContext();
-    System.out.println("ctx준비..");
 
     try {
       //mybatis 객체 준비

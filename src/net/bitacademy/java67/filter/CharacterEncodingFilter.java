@@ -9,11 +9,6 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-/* 실습 목표: 필터 초기화 파라미터의 값을 꺼내기
- * 1) init()가 호출될 때 넘어오는 FilterConfig를 잘 보관하라!
- * 2) doFilter()를 실행할 때 config를 사용하여 초기화 파라미터 값을 얻는다.
- */
-
 public class CharacterEncodingFilter implements Filter {
   FilterConfig config;
 

@@ -27,7 +27,16 @@
              (title, st_date, ed_date, hours, days,
               capa, intro, cnt, mno, cno) 
       VALUES (#{title}, #{st_date}, #{ed_date}, #{hours}, #{days},
-              #{capa}, #{intro}, 0, #{mno}, #{cno})
+              #{capa}, #{intro}, 0,
+	  <choose>
+	    <when test="mno != 0">mno=#{mno}</when>
+	    <otherwise>mno=null</otherwise>
+	  </choose>,
+	  <choose>
+	    <when test="cno != 0">cno=#{cno}</when>
+	    <otherwise>cno=null</otherwise>
+	  </choose>
+	  )
   </insert>
   
   <select id="selectList" resultMap="LectureVoMap">
@@ -55,8 +64,16 @@
         ,days=#{days}
         ,capa=#{capa}
         ,intro=#{intro}
-        ,mno=#{mno}
-        ,cno=#{cno}
+        ,
+        <choose>
+          <when test="mno != 0">mno=#{mno}</when>
+          <otherwise>mno=null</otherwise>
+        </choose>
+        ,
+        <choose>
+          <when test="cno != 0">cno=#{cno}</when>
+          <otherwise>cno=null</otherwise>
+        </choose>
       WHERE lno=#{lno}
   </update>
   

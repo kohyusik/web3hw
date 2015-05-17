@@ -3,14 +3,11 @@ package net.bitacademy.java67.dao;
 import java.util.List;
 
 import net.bitacademy.java67.DaoException;
-import net.bitacademy.java67.domain.ClassroomVo;
 import net.bitacademy.java67.domain.LectureVo;
-import net.bitacademy.java67.domain.ManagerVo;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-/* 실습 내용: mybatis 사용 */
 
 public class LectureDao {
   SqlSessionFactory sqlSessionFactory;
@@ -100,16 +97,6 @@ public class LectureDao {
     
   }
 
-public List<ManagerVo> selectManagerList(int no) {
-	// TODO Auto-generated method stub
-	return null;
-}
-
-public List<ClassroomVo> selectClassroomList(int no) {
-	// TODO Auto-generated method stub
-	return null;
-}
-  
 
 }
 

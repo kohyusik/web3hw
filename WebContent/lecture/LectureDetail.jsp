@@ -22,14 +22,14 @@
 총 인원(명): <input type='number' name='capa' value='${lecture.capa}' required><br>
 매니져: <select name='mno'><option value='0'>미배정</option>
 				<c:forEach items="${requestScope.managerList}" var="manager">
-				<c:set var="mmno" value="${manager.mno}"/>
+				<c:set var="mmno" value="${manager.no}"/>
 				<c:set var="lmno" value="${lecture.mno}"/>
 					<c:choose>
 						<c:when test="${mmno == lmno}">
-						  <option value='${manager.mno}' selected>${manager.name}</option>
+						  <option value='${manager.no}' selected>${manager.name}</option>
 						</c:when>
 						<c:otherwise>
-						  <option value='${manager.mno}'>${manager.name}</option>
+						  <option value='${manager.no}'>${manager.name}</option>
 						</c:otherwise>
 					</c:choose>
 				</c:forEach>

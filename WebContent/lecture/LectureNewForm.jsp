@@ -21,7 +21,7 @@
 총 인원(명): <input type='number' name='capa' required><br>    
 매니져: <select name='mno'><option value='0'>미배정</option>
         <c:forEach items="${requestScope.managerList}" var="manager">
-          <option value='${manager.mno}'>${manager.name}</option>
+          <option value='${manager.no}'>${manager.name}</option>
         </c:forEach>
       </select><br>    
 강의실: <select name='cno'><option value='0'>미배정</option>

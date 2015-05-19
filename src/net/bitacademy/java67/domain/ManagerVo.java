@@ -3,7 +3,7 @@ package net.bitacademy.java67.domain;
 
 public class ManagerVo {
   
-  protected int mno;
+  protected int no;
   protected String name;
   protected String email;
   protected String photo;
@@ -15,11 +15,11 @@ public class ManagerVo {
   public void setPassword(String password) {
     this.password = password;
   }
-  public int getMno() {
-    return mno;
+  public int getNo() {
+    return no;
   }
-  public void setMno(int mno) {
-    this.mno = mno;
+  public void setNo(int mno) {
+    this.no = mno;
   }
   public String getName() {
     return name;
